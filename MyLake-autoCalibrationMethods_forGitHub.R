@@ -43,7 +43,7 @@ library(scales)
 
 
 # Set working diretory
-path <- "G:/My Drive/rachel-PC/Miami-OH/Sentinel North - Laval/MyLake_public/v12/Giles_application_GitHub"
+path <- dirname(rstudioapi::getSourceEditorContext()$path)
 setwd(path)
 
 
@@ -122,6 +122,9 @@ mylakeFUN <- function(p,row.locs){
   swa_b0 <- p[7]
   swa_b1 <- p[8]
 
+  # save parameter estimates for posterior distribution in R global environment
+  iter.val <<- iter.val+1
+  est.param.vals[[iter.val]] <<- p
   
   ## locations of parameter values in the spreadsheet
   
@@ -195,6 +198,8 @@ wrapper_scales <- function(x, lb, ub){
 
 print("### NELDER-MEAD ###")
 niter <- 1000
+iter.val <- 0  
+est.param.vals <- list()
 t1 <- Sys.time()
 mylakeOPT1 <- neldermead(values.optim, mylakeFUN, lower = rep(0,length(values.optim)), 
                          upper =  rep(10,length(values.optim)), nl.info = TRUE, 

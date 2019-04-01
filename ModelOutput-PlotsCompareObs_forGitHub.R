@@ -15,7 +15,7 @@ library(rLakeAnalyzer)
 
 ## set folder directory for files:
 
-path="G:/My Drive/rachel-PC/Miami-OH/Sentinel North - Laval/MyLake_public/v12/Giles_application_GitHub"
+path=dirname(rstudioapi::getSourceEditorContext()$path)
 setwd(path)
 
 

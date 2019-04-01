@@ -2,33 +2,28 @@
 % Used in E-project Pcode
 % by TSA, last modified 23.02.2005
 % updated by RMP, for GitHub (2019-Mar-27)
-
-%% NOTE:  In this Matlab script , local directory paths
-%% will need to be updated with the location of the model components and associated
-%% files. There are EIGHT path names in the Matlab script that require this updating
-%% (they start with "G:\My Drive\" ...)
     
 clear all;
-path(path,'G:\My Drive\rachel-PC\Miami-OH\Sentinel North - Laval\MyLake_public\v12\air_sea') %path for air-sea toolbox
-path(path,'G:\My Drive\rachel-PC\Miami-OH\Sentinel North - Laval\MyLake_public\v12\v12_1') %path for MyLake model code
+path(path,'MyLake_public\v12\air_sea') %path for air-sea toolbox
+path(path,'MyLake_public\v12\v12_1') %path for MyLake model code
 
 global ies80 Eevapor;
 test_time=0;
 Eevapor=0;
 
-load 'G:\My Drive\rachel-PC\Miami-OH\Sentinel North - Laval\MyLake_public\v12\Giles_application_GitHub\Observations\GILESice.dat'
-load 'G:\My Drive\rachel-PC\Miami-OH\Sentinel North - Laval\MyLake_public\v12\Giles_application_GitHub\Observations\GILEStemp_all.dat' 
+load 'Observations\GILESice.dat'
+load 'Observations\GILEStemp_all.dat' 
 
-[Obs_TP_Chla, trash]=xlsread('G:\My Drive\rachel-PC\Miami-OH\Sentinel North - Laval\MyLake_public\v12\Giles_application_GitHub\Observations\GILES_TP_Chla1989_2018.xls');
+[Obs_TP_Chla, trash]=xlsread('Observations\GILES_TP_Chla1989_2018.xls');
 
 lake='Giles';
 year=2016;
 m_start=[2016,05,17];
 m_stop=[2018,12,31];
 
-initfile='G:\My Drive\rachel-PC\Miami-OH\Sentinel North - Laval\MyLake_public\v12\Giles_application_GitHub\GILES_init_v12.xls';
-parafile='G:\My Drive\rachel-PC\Miami-OH\Sentinel North - Laval\MyLake_public\v12\Giles_application_GitHub\GILES_para_v12.xls';
-inputfile='G:\My Drive\rachel-PC\Miami-OH\Sentinel North - Laval\MyLake_public\v12\Giles_application_GitHub\GILES_input_1997-2018-wInflowScenario1.xls';
+initfile='GILES_init_v12.xls';
+parafile='GILES_para_v12.xls';
+inputfile='GILES_input_1997-2018-wInflowScenario1.xls';
 
 tic
         [zz,Az,Vz,tt,Qst,Kzt,Tzt,Czt,Szt,Pzt,Chlzt,PPzt,DOPzt,DOCzt,Qzt_sed,lambdazt,...

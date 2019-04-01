@@ -3,11 +3,6 @@
 ### for manual calibration
 ### RMP (last modified 2019-MAR-27)
 
-## NOTE:  In Matlab script ("RMC_modelGILES_v12_rmp.m"), local directory paths
-## will need to be updated with the location of the model components and associated
-## files. There are EIGHT path names in the Matlab script that require this updating
-## (they start with "G:\My Drive\" ...)
-
 
 ## load necessary packages
 
@@ -56,7 +51,7 @@ run_MyLake_model <- function(path, param.value, row.loc) {
 ## (can be used in for-loops to test multiple parameter values,
 ## or to manually adjust multiple parameters)
 
-run_MyLake_model(path = "G:/My Drive/rachel-PC/Miami-OH/Sentinel North - Laval/MyLake_public/v12/Giles_application_GitHub",
+run_MyLake_model(path = dirname(rstudioapi::getSourceEditorContext()$path),
                  param.value = 41.3765,   # this would change the latitude value
                  row.loc = 8)             # location of latitude parameter is row 8 of parameter file
 
