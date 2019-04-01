@@ -1,0 +1,13 @@
+Ice-on	15-Dec-1991
+Ice-off	10-Mar-1992
+Ice-off	10-Apr-1993
+Ice-on	15-Dec-1993
+Ice-off	13-Apr-1994
+Ice-on	02-Jan-2013
+Ice-off	01-Apr-2013
+Ice-off	06-Apr-2014
+Ice-off	12-Apr-2015
+Ice-on	16-Dec-2016
+Ice-off	25-Feb-2017
+Ice-on	15-Dec-2017
+Ice-off	03-Mar-2018
