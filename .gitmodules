@@ -1,0 +1,3 @@
+[submodule "MyLake_public"]
+	path = MyLake_public
+	url = https://github.com/biogeochemistry/MyLake_public
